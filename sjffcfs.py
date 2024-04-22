@@ -14,9 +14,8 @@ def main():
 
 
 if __name__ == "__main__":
+    menu=int(input('Input your process management: '))
     main()
-
-menu=int(input('Input your process management: '))
 
 def first_come_first_serve():
     process=int(input('Input number of processes: '))
