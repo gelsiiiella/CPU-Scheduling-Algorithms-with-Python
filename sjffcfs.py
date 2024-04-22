@@ -14,8 +14,8 @@ def main():
 
 
 if __name__ == "__main__":
-    menu=int(input('Input your process management: '))
     main()
+    menu=int(input('Input your process management: '))
 
 def first_come_first_serve():
     process=int(input('Input number of processes: '))
@@ -95,6 +95,7 @@ try:
     else:
         print('Invalid Input.Try again.')
         main()
+        menu=int(input('Input your process management: '))
 
 except:
     print('Invalid Input')
