@@ -2,21 +2,6 @@ import sys
 from tabulate import tabulate
 from art import *
 
-
-def main():
-    tprint("Main Menu",font="block",chr_ignore=True)
-    tprint('''
-              First Come First Serve 
-              Shortest Job First
-            ''', font="cybermedium")
-    print("\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2]SJF\t\t\t [3]Exit\n\n\n")
-
-
-if __name__ == "__main__":
-    main()
-    menu=int(input('Input your process management: '))
-
 def first_come_first_serve():
     process=int(input('Input number of processes: '))
     burstTime=[]
@@ -79,6 +64,20 @@ def shortest_job_first():
     print("Average Waiting Time:",round(avg_wt,2))
     print("Average Completion Time:",round(avg_ct,2))
 
+def main():
+    tprint("Main Menu",font="block",chr_ignore=True)
+    tprint('''
+              First Come First Serve 
+              Shortest Job First
+            ''', font="cybermedium")
+    print("\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
+    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2]SJF\t\t\t [3]Exit\n\n\n")
+
+
+if __name__ == "__main__":
+    main()
+    menu=int(input('Input your process management: '))
+
 
 try:
     if menu == 1:
@@ -89,7 +88,7 @@ try:
         valid = input('Are you sure to exit? ')
         if valid.upper() == 'Y':
             print('Exiting the program')
-            sys.exit(0)
+            exit()
         else:
             main()
     else:
@@ -98,7 +97,7 @@ try:
         menu=int(input('Input your process management: '))
 
 except:
-    print('Invalid Input')
+    pass
 
 
 
