@@ -1,12 +1,20 @@
+import sys
 from tabulate import tabulate
+from art import *
 
-def main():
-    print('''               Main Menu
-                [1] First Come First Serve 
-                [2] Shortest Job First
-                [3] Exit ''')
 
-menu=int(input('Input your process management: '))
+def menu():
+    tprint("Main Menu",font="block",chr_ignore=True)
+    tprint('''
+              First Come First Serve 
+              Shortest Job First
+            ''', font="cybermedium")
+    print("\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
+    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2]SJF\t\t\t [3]Exit\n\n\n")
+
+    menu=int(input('Input your process management: '))
+
+
 
 def first_come_first_serve():
     process=int(input('Input number of processes:  '))
@@ -76,14 +84,17 @@ try:
     elif menu ==2:
         shortest_job_first()
     elif menu == 3:
-        valid = input('Are you to exit? ')
-        if valid == 'Y':
-            exit
+        valid = input('Are you sure to exit? ')
+        if valid.upper() == 'Y':
+            print('Exiting the program')
+            sys.exit(0)
         else:
-            main()
+            menu()
 
 except:
     print('Invalid Input')
+
+menu()
 
 
 
