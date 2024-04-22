@@ -24,8 +24,8 @@ def first_come_first_serve():
 
     print(tabulate(data,headers=headers,tablefmt='grid'))
 
-    print("Average Turnaround Time:",round(avg_tat))
-    print("Average Waiting Time:",round(avg_wt))
+    print("Average Turnaround Time:",round(avg_tat,2))
+    print("Average Waiting Time:",round(avg_wt,2))
 
 
 def shortest_job_first():
@@ -64,6 +64,18 @@ def shortest_job_first():
     print("Average Waiting Time:",round(avg_wt,2))
     print("Average Completion Time:",round(avg_ct,2))
 
+def confirm_exit():
+    while True:
+        valid = input('Are you sure you want to exit? (Y/N): ').upper()
+        if valid == 'Y':
+            print('Exiting the program')
+            sys.exit()
+        elif valid == 'N':
+            main()
+            menu=int(input('Input your process management: '))
+        else:
+            print("Invalid input. Please enter 'Y' or 'N'.")
+
 def main():
     tprint("Main Menu",font="block",chr_ignore=True)
     tprint('''
@@ -71,7 +83,7 @@ def main():
               Shortest Job First
             ''', font="cybermedium")
     print("\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2]SJF\t\t\t [3]Exit\n\n\n")
+    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2] SJF\t\t\t [3] Exit\n\n\n")
 
 
 if __name__ == "__main__":
@@ -85,12 +97,7 @@ try:
     elif menu ==2:
         shortest_job_first()
     elif menu == 3:
-        valid = input('Are you sure to exit? ')
-        if valid.upper() == 'Y':
-            print('Exiting the program')
-            exit()
-        else:
-            main()
+        confirm_exit()
     else:
         print('Invalid Input.Try again.')
         main()
