@@ -72,24 +72,25 @@ def confirm_exit():
             sys.exit()
         elif valid == 'N':
             main()
-            menu=int(input('Input your process management: '))
+            menu=int(input('\n\nInput your process management: '))
         else:
             print("Invalid input. Please enter 'Y' or 'N'.")
 
 
 def main():
+    print('»')
     tprint("Main Menu",font="block",chr_ignore=True)
     tprint('''
               First Come First Serve 
               Shortest Job First
             ''', font="cybermedium")
-    print("\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2] SJF\t\t\t [3] Exit\n\n\n")
+    print("\t\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
+    print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] Exit ««\n\n\n")
 
 
 if __name__ == "__main__":
     main()
-    menu=int(input('Input your process management: '))
+    menu=int(input('Input your Choice [1-3]: '))
 
 
 try:
