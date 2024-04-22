@@ -24,8 +24,8 @@ def first_come_first_serve():
 
     print(tabulate(data,headers=headers,tablefmt='grid'))
 
-    print("Average Turnaround Time:",round(avg_tat))
-    print("Average Waiting Time:",round(avg_wt))
+    print("Average Turnaround Time:",round(avg_tat,2))
+    print("Average Waiting Time:",round(avg_wt,2))
 
 
 def shortest_job_first():
@@ -105,7 +105,7 @@ try:
         menu=int(input('Input your process management: '))
 
 except:
-    pass
+    print('---------------------------------')
 
 
 
