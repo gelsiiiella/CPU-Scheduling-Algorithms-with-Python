@@ -27,11 +27,6 @@ def first_come_first_serve():
     print("Average Turnaround Time:",round(avg_tat,2))
     print("Average Waiting Time:",round(avg_wt,2))
 
-    if __name__ == "__main__":
-        main()
-        menu=int(input('Input your Choice [1-3]: '))
-
-
 def shortest_job_first():
     process=int(input('Input number of processes:  '))
     burstTime=[]
@@ -68,10 +63,6 @@ def shortest_job_first():
     print("Average Waiting Time:",round(avg_wt,2))
     print("Average Completion Time:",round(avg_ct,2))
 
-    if __name__ == "__main__":
-        main()
-        menu=int(input('Input your Choice [1-3]: '))
-
 def confirm_exit():
     while True:
         valid = input('Are you sure you want to exit? (Y/N): ').upper()
@@ -79,44 +70,31 @@ def confirm_exit():
             print('Exiting the program')
             sys.exit()
         elif valid == 'N':
-            if __name__ == "__main__":
-                main()
-                menu=int(input('Input your Choice [1-3]: '))
+            return True
         else:
             print("Invalid input. Please enter 'Y' or 'N'.")
 
-
 def main():
-    print('»')
-    tprint("Main Menu",font="block",chr_ignore=True)
-    tprint('''
-              First Come First Serve 
-              Shortest Job First
-            ''', font="cybermedium")
-    print("\t\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-    print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] Exit ««\n\n\n")
+    while True:
+        tprint("Main Menu",font="block",chr_ignore=True)
+        tprint('''
+                  First Come First Serve 
+                  Shortest Job First
+                ''', font="cybermedium")
+        print("\t\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
+        print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] Exit ««\n\n\n")
 
+        menu=int(input('Input your Choice [1-3]: '))
+
+        if menu == 1:
+            first_come_first_serve()
+        elif menu == 2:
+            shortest_job_first()
+        elif menu == 3:
+            if confirm_exit():
+                break
+        else:
+            print('Invalid Input. Try again.')
 
 if __name__ == "__main__":
     main()
-    menu=int(input('Input your Choice [1-3]: '))
-
-
-try:
-    if menu == 1:
-        first_come_first_serve()
-    elif menu ==2:
-        shortest_job_first()
-    elif menu == 3:
-        confirm_exit()
-    else:
-        print('Invalid Input.Try again.')
-
-except:
-    print('---------------------------------')
-
-
-
-
-
-
