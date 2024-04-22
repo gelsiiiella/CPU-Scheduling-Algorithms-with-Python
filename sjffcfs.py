@@ -65,8 +65,12 @@ def shortest_job_first():
 
 if menu == 1:
     first_come_first_serve()
-else:
+elif menu ==2:
     shortest_job_first()
+elif menu == 3:
+    exit
+else:
+    print('Invalid Input')
 
 
 
