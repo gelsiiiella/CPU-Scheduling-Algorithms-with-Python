@@ -15,7 +15,7 @@ def first_come_first_serve():
     tat= [0] * process
 
     for i in range(process):
-        burst=int(input("Enter burst time for {}:".format(i+1)))
+        burst=int(input("Enter burst time for process {}:".format(i+1)))
         burstTime.append(burst)
 
         if i > 0:
@@ -41,25 +41,27 @@ def shortest_job_first():
     ct= [0] * process
 
     for i in range(process):
-        burst=int(input("Enter burst time for {}:".format(i+1)))
+        burst=int(input("Enter burst time for process {}:".format(i+1)))
         burstTime.append(burst)
+        burstTime.sort()
 
         if i > 0:
-            tat[i] = wt[i]+ burstTime[i]
-            wt[i] = tat[i-1]-burstTime[i-1]
-            ct [i] = burstTime[i-1] + tat[i-1]
+            tat[i] = ct[i] 
+            ct [i] = burstTime[i] + tat[i]
+            wt[i]= ct[i]-burstTime[i]
 
             avg_wt=sum(wt)/process
             avg_tat=sum(tat)/process
             avg_ct = sum(ct)/process
 
-    headers= ['Processes','Burst Time','Turn-Around Time','Waiting Time','Completion Time']
-    data = [[i+1,burstTime[i],tat[i],wt[i],ct[i]] for i in range(process)]
+    headers= ['Processes','Completion Time','Turn-Around Time','Waiting Time']
+    data = [[i+1,ct[i],tat[i],wt[i]] for i in range(process)]
 
     print(tabulate(data,headers=headers,tablefmt='grid'))
 
     print("Average Turnaround Time:",round(avg_tat))
     print("Average Waiting Time:",round(avg_wt))
+    print("Average Completion Time:",round(avg_ct))
 
 if menu == 1:
     first_come_first_serve()
