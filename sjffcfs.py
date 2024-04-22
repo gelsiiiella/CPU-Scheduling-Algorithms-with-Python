@@ -9,7 +9,7 @@ def first_come_first_serve():
     tat= [0] * process
 
     for i in range(process):
-        burst=int(input("Enter burst time for {}:".format(i+1)))
+        burst=int(input("Enter burst time for {}: ".format(i+1)))
         burstTime.append(burst)
 
         if i > 0:
@@ -33,7 +33,7 @@ def shortest_job_first():
     burstTime=[]
 
     for i in range(process):
-        burst=int(input("Enter burst time for process {}:".format(i+1)))
+        burst=int(input("Enter burst time for process {}: ".format(i+1)))
         burstTime.append(burst)
 
     burstTime.sort()
