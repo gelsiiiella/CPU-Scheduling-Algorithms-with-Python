@@ -45,14 +45,16 @@ def shortest_job_first():
         burstTime.append(burst)
 
         if i > 0:
-            wt[i] = burstTime[i-1]+wt[i-1]
             tat[i] = wt[i]+ burstTime[i]
+            wt[i] = tat[i-1]-burstTime[i-1]
+            ct [i] = burstTime[i-1] + tat[i-1]
 
             avg_wt=sum(wt)/process
             avg_tat=sum(tat)/process
+            avg_ct = sum(ct)/process
 
-    headers= ['Processes','Burst Time','Turn-Around Time','Waiting Time']
-    data = [[i+1,burstTime[i],tat[i],wt[i]]for i in range(process)]
+    headers= ['Processes','Burst Time','Turn-Around Time','Waiting Time','Completion Time']
+    data = [[i+1,burstTime[i],tat[i],wt[i],ct[i]] for i in range(process)]
 
     print(tabulate(data,headers=headers,tablefmt='grid'))
 
