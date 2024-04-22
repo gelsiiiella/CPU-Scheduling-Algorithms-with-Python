@@ -94,7 +94,8 @@ try:
         else:
             main()
     else:
-        print('Invalid Input')
+        print('Invalid Input.Try again.')
+        main()
 
 except:
     print('Invalid Input')
