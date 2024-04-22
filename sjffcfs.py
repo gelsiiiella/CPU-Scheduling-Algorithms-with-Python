@@ -46,8 +46,8 @@ def shortest_job_first():
         burstTime.sort()
 
         if i > 0:
+            ct [i] = burstTime[i+1] 
             tat[i] = ct[i] 
-            ct [i] = burstTime[i] + tat[i]
             wt[i]= ct[i]-burstTime[i]
 
             avg_wt=sum(wt)/process
