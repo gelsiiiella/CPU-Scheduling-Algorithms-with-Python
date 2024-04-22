@@ -36,9 +36,9 @@ def first_come_first_serve():
 def shortest_job_first():
     process=int(input('Input number of processes:  '))
     burstTime=[]
-    wt= [0] * process
-    tat= [0] * process
-    ct= [0] * process
+    wt= [0] 
+    tat= [0] 
+    ct= [0] 
 
     for i in range(process):
         burst=int(input("Enter burst time for process {}:".format(i+1)))
