@@ -24,8 +24,8 @@ def first_come_first_serve():
 
     print(tabulate(data,headers=headers,tablefmt='grid'))
 
-    print("Average Turnaround Time:",round(avg_tat,2))
-    print("Average Waiting Time:",round(avg_wt,2))
+    print("Average Turnaround Time:",round(avg_tat))
+    print("Average Waiting Time:",round(avg_wt))
 
 
 def shortest_job_first():
@@ -76,6 +76,7 @@ def confirm_exit():
         else:
             print("Invalid input. Please enter 'Y' or 'N'.")
 
+
 def main():
     tprint("Main Menu",font="block",chr_ignore=True)
     tprint('''
@@ -83,7 +84,7 @@ def main():
               Shortest Job First
             ''', font="cybermedium")
     print("\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2] SJF\t\t\t [3] Exit\n\n\n")
+    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2]SJF\t\t\t [3]Exit\n\n\n")
 
 
 if __name__ == "__main__":
