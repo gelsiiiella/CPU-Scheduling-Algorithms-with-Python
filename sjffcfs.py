@@ -84,7 +84,7 @@ def main():
               Shortest Job First
             ''', font="cybermedium")
     print("\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2]SJF\t\t\t [3]Exit\n\n\n")
+    print("\t\t\t\t\t\t\t\t[1] FCFS\t\t [2] SJF\t\t\t [3] Exit\n\n\n")
 
 
 if __name__ == "__main__":
