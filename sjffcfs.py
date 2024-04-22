@@ -27,6 +27,10 @@ def first_come_first_serve():
     print("Average Turnaround Time:",round(avg_tat,2))
     print("Average Waiting Time:",round(avg_wt,2))
 
+    if __name__ == "__main__":
+        main()
+        menu=int(input('Input your Choice [1-3]: '))
+
 
 def shortest_job_first():
     process=int(input('Input number of processes:  '))
@@ -64,6 +68,10 @@ def shortest_job_first():
     print("Average Waiting Time:",round(avg_wt,2))
     print("Average Completion Time:",round(avg_ct,2))
 
+    if __name__ == "__main__":
+        main()
+        menu=int(input('Input your Choice [1-3]: '))
+
 def confirm_exit():
     while True:
         valid = input('Are you sure you want to exit? (Y/N): ').upper()
@@ -71,8 +79,9 @@ def confirm_exit():
             print('Exiting the program')
             sys.exit()
         elif valid == 'N':
-            main()
-            menu=int(input('\n\nInput your process management: '))
+            if __name__ == "__main__":
+                main()
+                menu=int(input('Input your Choice [1-3]: '))
         else:
             print("Invalid input. Please enter 'Y' or 'N'.")
 
@@ -102,8 +111,6 @@ try:
         confirm_exit()
     else:
         print('Invalid Input.Try again.')
-        main()
-        menu=int(input('Input your process management: '))
 
 except:
     print('---------------------------------')
