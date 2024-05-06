@@ -56,9 +56,10 @@ def shortest_remaining_time_first(processes):
     data = [[p.pid, p.arrival_time, p.burst_time, p.completion_time, p.turnaround_time, p.waiting_time] for p in processes]
 
     print(tabulate(data, headers=headers, tablefmt='grid'))
-    print("\nAverage Turnaround Time:", round(average_turnaround_time, 2))
+    print("\nAverage Completion Time:", round(average_completion_time, 2))
+    print("Average Turnaround Time:", round(average_turnaround_time, 2))
     print("Average Waiting Time:", round(average_waiting_time, 2))
-    print("Average Completion Time:", round(average_completion_time, 2)) 
+    print('\n') 
 
 def run_srtf():
     print("""          
@@ -84,6 +85,7 @@ def run_srtf():
     for i in range(process_count):
         arrival_time = int(input("Enter arrival time for process {}: ".format(i+1)))
         burst_time = int(input("Enter burst time for process {}: ".format(i+1)))
+        print('\n') 
         processes.append(Process(i+1, arrival_time, burst_time))
 
         if burst_time == 0:
@@ -110,6 +112,7 @@ def first_come_first_serve():
             """)
      
     process=int(input('Input number of processes: '))
+    print('\n')
     burstTime=[]
     wt= [0] * process
     tat= [0] * process
@@ -151,6 +154,7 @@ def shortest_job_first():
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
             """)
     process=int(input('Input number of processes:  '))
+    print('\n')
     burstTime=[]
 
     for i in range(process):
@@ -183,9 +187,9 @@ def shortest_job_first():
 
     print(tabulate(data,headers=headers,tablefmt='grid'))
 
+    print("Average Completion Time:",round(avg_ct,2))
     print("Average Turnaround Time:",round(avg_tat,2))
     print("Average Waiting Time:",round(avg_wt,2))
-    print("Average Completion Time:",round(avg_ct,2))
 
 
 def confirm_exit():
@@ -207,8 +211,8 @@ def main():
                 Shortest Job First
                 Shortest Remaining Time First
                 ''', font="cybermedium")
-        print("\t\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-        print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] SRTF\t\t\t [4] Exit ««\n\n\n")
+        print("\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
+        print("\t\t\t\t»» [1] FCFS\t\t [2] SJF\t\t\t [3] SRTF\t\t\t [4] Exit ««\n\n\n")
 
         processes = []
         menu=int(input('Input your Choice [1-4]: '))
