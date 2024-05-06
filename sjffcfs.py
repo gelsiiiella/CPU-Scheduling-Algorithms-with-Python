@@ -18,7 +18,8 @@ def first_come_first_serve():
 
         avg_wt=sum(wt)/process
         avg_tat=sum(tat)/process
-
+        
+    print("\t\t\t\t\tSummary Table")
     headers= ['Processes','Burst Time','Turn-Around Time','Waiting Time']
     data = [[i+1,burstTime[i],tat[i],wt[i]]for i in range(process)]
 
@@ -54,6 +55,8 @@ def shortest_job_first():
         avg_tat=sum(tat)/process
         avg_ct = sum(ct)/process
 
+
+    print("\t\t\t\t\tSummary Table")
     headers= ['Processes','Completion Time','Turn-Around Time','Waiting Time']
     data = [[i+1,ct[i],tat[i],wt[i]] for i in range(process)]
 
