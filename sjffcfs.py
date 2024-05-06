@@ -154,11 +154,12 @@ def main():
         tprint('''
                   First Come First Serve 
                   Shortest Job First
+                  Shortest Remaining Time First
                 ''', font="cybermedium")
         print("\t\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
-        print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] SRTF [4] Exit ««\n\n\n")
+        print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] SRTF\t\t\t [4] Exit ««\n\n\n")
 
-        menu=int(input('Input your Choice [1-3]: '))
+        menu=int(input('Input your Choice [1-4]: '))
 
         if menu == 1:
             first_come_first_serve()
