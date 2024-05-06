@@ -63,15 +63,16 @@ def shortest_job_first():
     print("Average Waiting Time:",round(avg_wt,2))
     print("Average Completion Time:",round(avg_ct,2))
 
-class Process:
-    def __init__(self, pid, arrival_time=0, burst_time=0):
-        self.pid = pid
-        self.arrival_time = arrival_time
-        self.burst_time = burst_time
-        self.remaining_time = burst_time
-        self.completion_time = 0
 
 def shortest_remaining_time_first(processes):
+    class Process:
+        def __init__(self, pid, arrival_time=0, burst_time=0):
+            self.pid = pid
+            self.arrival_time = arrival_time
+            self.burst_time = burst_time
+            self.remaining_time = burst_time
+            self.completion_time = 0
+
     time = 0
     completed_processes = 0
     n = len(processes)
@@ -123,7 +124,6 @@ def shortest_remaining_time_first(processes):
 
     process_count = int(input("Input number of processes: "))
     print("\n")
-    processes = []
 
     for i in range(process_count):
         arrival_time = int(input("Enter arrival time for process {}: ".format(i+1)))
@@ -133,8 +133,6 @@ def shortest_remaining_time_first(processes):
         if burst_time == 0:
             print("Burst time cannot be 0.")
             exit(1)
-
-    shortest_remaining_time_first(processes)
 
     print("\nPresented by: Angela Samboa - CS1D")
 
@@ -161,6 +159,7 @@ def main():
         print("\t\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
         print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] SRTF\t\t\t [4] Exit ««\n\n\n")
 
+        processes = []
         menu=int(input('Input your Choice [1-4]: '))
 
         if menu == 1:
