@@ -18,7 +18,7 @@ def first_come_first_serve():
 
         avg_wt=sum(wt)/process
         avg_tat=sum(tat)/process
-        
+
     print("\t\t\t\t\tSummary Table")
     headers= ['Processes','Burst Time','Turn-Around Time','Waiting Time']
     data = [[i+1,burstTime[i],tat[i],wt[i]]for i in range(process)]
@@ -124,7 +124,6 @@ def shortest_remaining_time_first(processes):
     print("\nAverage Turnaround Time:", round(average_turnaround_time, 2))
     print("Average Waiting Time:", round(average_waiting_time, 2))
     print("Average Completion Time:", round(average_completion_time, 2)) 
-    print("\nPresented by: Angela Samboa - CS1D")
  
 
 
