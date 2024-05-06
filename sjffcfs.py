@@ -123,6 +123,7 @@ def shortest_remaining_time_first(processes):
     print("Average Completion Time:", round(average_completion_time, 2)) 
 
     process_count = int(input("Input number of processes: "))
+    processes = []
     print("\n")
 
     for i in range(process_count):
