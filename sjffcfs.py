@@ -165,7 +165,7 @@ def main():
         elif menu == 2:
             shortest_job_first()
         elif menu == 3:
-            shortest_remaining_time_first(processes)
+            shortest_remaining_time_first()
         elif menu == 4:
             if confirm_exit():
                 break
