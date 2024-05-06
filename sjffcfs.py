@@ -93,6 +93,22 @@ def run_srtf():
     shortest_remaining_time_first(processes)
 
 def first_come_first_serve():
+    print("""          
+              __________                                 
+            .'----------`.                              
+            | .--------. |                             
+            | |########| |       __________              
+            | |########| |      /__________\             
+   .--------| `--------' |------|    --=-- |------------------.
+   |        `----,-.-----'      |o ======  |                  | 
+   |       ______|_|_______     |__________|                  | 
+   |      /  %%%%%%%%%%%%  \           First Come             | 
+   |     /  %%%%%%%%%%%%%%  \             ---                 | 
+   |     ^^^^^^^^^^^^^^^^^^^^          First Serve            |
+   +----------------------------------------------------------+
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            """)
+     
     process=int(input('Input number of processes: '))
     burstTime=[]
     wt= [0] * process
@@ -119,6 +135,21 @@ def first_come_first_serve():
     print("Average Waiting Time:",round(avg_wt,2))
 
 def shortest_job_first():
+    print("""          
+              __________                                 
+            .'----------`.                              
+            | .--------. |                             
+            | |########| |       __________              
+            | |########| |      /__________\             
+   .--------| `--------' |------|    --=-- |------------------.
+   |        `----,-.-----'      |o ======  |                  | 
+   |       ______|_|_______     |__________|                  | 
+   |      /  %%%%%%%%%%%%  \           Shortest Job           | 
+   |     /  %%%%%%%%%%%%%%  \             ---                 | 
+   |     ^^^^^^^^^^^^^^^^^^^^      First(Non-Preemptive)      |
+   +----------------------------------------------------------+
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            """)
     process=int(input('Input number of processes:  '))
     burstTime=[]
 
@@ -172,9 +203,9 @@ def main():
     while True:
         tprint("Main Menu",font="block",chr_ignore=True)
         tprint('''
-                  First Come First Serve 
-                  Shortest Job First
-                  Shortest Remaining Time First
+                First Come First Serve 
+                Shortest Job First
+                Shortest Remaining Time First
                 ''', font="cybermedium")
         print("\t\t\t\t\t\t\t\t\t\tSelect from the following Algorithms:\n\n\n")
         print("\t\t\t\t\t\t\t\t »» [1] FCFS\t\t [2] SJF\t\t\t [3] SRTF\t\t\t [4] Exit ««\n\n\n")
