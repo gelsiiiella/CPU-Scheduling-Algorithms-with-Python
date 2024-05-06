@@ -121,21 +121,8 @@ def shortest_remaining_time_first(processes):
     print("\nAverage Turnaround Time:", round(average_turnaround_time, 2))
     print("Average Waiting Time:", round(average_waiting_time, 2))
     print("Average Completion Time:", round(average_completion_time, 2)) 
-
-    process_count = int(input("Input number of processes: "))
-    processes = []
-    print("\n")
-
-    for i in range(process_count):
-        arrival_time = int(input("Enter arrival time for process {}: ".format(i+1)))
-        burst_time = int(input("Enter burst time for process {}: ".format(i+1)))
-        processes.append(Process(i+1, arrival_time, burst_time))
-
-        if burst_time == 0:
-            print("Burst time cannot be 0.")
-            exit(1)
-
     print("\nPresented by: Angela Samboa - CS1D")
+ 
 
 
 def confirm_exit():
