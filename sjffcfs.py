@@ -134,6 +134,8 @@ def shortest_remaining_time_first(processes):
             print("Burst time cannot be 0.")
             exit(1)
 
+    shortest_remaining_time_first(processes)
+
     print("\nPresented by: Angela Samboa - CS1D")
 
 
@@ -166,7 +168,7 @@ def main():
         elif menu == 2:
             shortest_job_first()
         elif menu == 3:
-            shortest_remaining_time_first()
+            shortest_remaining_time_first(processes)
         elif menu == 4:
             if confirm_exit():
                 break
